@@ -1,11 +1,10 @@
 function findFirstRepeated(gifts) {
   let repeatedGifts = new Set()
-  let result = -1
 
-  for (let gift of gifts) {
-    repeatedGifts.has(gift) ? (result = gift) : repeatedGifts.add(gift)
-    if (result !== -1) break
+  for (let i = 0; i < gifts.length; i++) {
+    if (repeatedGifts.has(gifts[i])) return gifts[i]
+    repeatedGifts.add(gifts[i])
   }
 
-  return result
+  return -1
 }
