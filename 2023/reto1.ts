@@ -2,7 +2,7 @@ function findFirstRepeated(gifts: number[]): number {
   let repeatedGifts = new Set()
   let result = -1
 
-  for (const gift of gifts) {
+  for (let gift of gifts) {
     repeatedGifts.has(gift) ? (result = gift) : repeatedGifts.add(gift)
     if (result !== -1) break
   }
