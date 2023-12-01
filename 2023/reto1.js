@@ -1,4 +1,4 @@
-function findFirstRepeated(gifts: number[]): number {
+function findFirstRepeated(gifts) {
   let repeatedGifts = new Set()
   let result = -1
 
@@ -9,7 +9,3 @@ function findFirstRepeated(gifts: number[]): number {
 
   return result
 }
-
-const pepe = findFirstRepeated([5, 3, 2, 3, 2, 5, 1])
-
-console.log(pepe)
