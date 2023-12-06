@@ -1,7 +1,7 @@
 function decode(message) {
   let output = ""
-  let inverted = false
-  let doubleInverted = false
+  let inverted,
+    doubleInverted = false
   let buffer = ""
   let doubleBuffer = ""
 
@@ -25,7 +25,7 @@ function decode(message) {
       default:
         if (!inverted && !doubleInverted) output += char
         else if (inverted && !doubleInverted) buffer += char
-        else if (inverted && doubleInverted) {
+        else {
           doubleBuffer += char
         }
         break
