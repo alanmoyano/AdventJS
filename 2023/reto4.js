@@ -8,8 +8,9 @@ function decode(message) {
   for (const char of message) {
     switch (char) {
       case "(":
-        if (!doubleInverted && !inverted) inverted = true
-        else doubleInverted = true
+        !doubleInverted && !inverted
+          ? (inverted = true)
+          : (doubleInverted = true)
         break
       case ")":
         if (!doubleInverted && inverted) {
