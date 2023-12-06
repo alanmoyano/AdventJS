@@ -1,21 +1,11 @@
 function maxDistance(movements) {
-  let distance = 0
+  let [right, left, joker] = [0, 0, 0]
+
   for (const movement of movements) {
-    switch (movement) {
-      case ">":
-        distance++
-        break
-      case "<":
-        distance--
-        break
-      case "*":
-        Math.abs(distance + 1) >= Math.abs(distance - 1)
-          ? distance++
-          : distance--
-        break
-      default:
-        break
-    }
+    if (movement === ">") right++
+    if (movement === "<") left++
+    if (movement === "*") joker++
   }
-  return Math.abs(distance)
+
+  return Math.abs(right - left) + joker
 }
